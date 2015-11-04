@@ -37,7 +37,6 @@ function setBase(base)
 	{
 		_factor[index] = Math.pow( _base, index )
 	}
-	console.log( "BASE IS NOW " + _base + " " + _factor)
 }
 
 function _calcValues( x, target)
@@ -114,16 +113,15 @@ function showValues( key, values, factor )
 
 var update = function()
 {
-    if ( goRandom == true )
-        base = Math.floor((Math.random() * 10) + 1);
 	now = new Date()
-
-    console.log( now )
     timeComponents =  [ now.getHours(), now.getMinutes(), now.getSeconds() ]
 	timeComponents[0] = ( timeComponents[0] > 12 ) ? "0" + (timeComponents[0]-12 ) : timeComponents[0];
+	$('#infoBase').html("Current base is " + _base + ".");
+    $('#infoTime').html("Current time is " + timeComponents[0] + ":" + timeComponents[1] + ":" + timeComponents[2] );
     keys = ['h','m', 's']
     table_names = ["values", "factors", "products"]
     tops = [0,0,6,4,3,3,3,3,2,2,2]
+	widths = [0,0,17,25,33,33,33,33,50,50,50]
 
     // For hours, mintues, seconds ...
 
@@ -149,7 +147,6 @@ var update = function()
     	{
     	    circleClass = 'circle'
     	    tableRow ="<td class='centerednumber'><div class='" + circleClass + " c" + _values[x-1] + "'>&nbsp</div></td>"
-    	    console.log( tableRow  )
     	    $(table_id).append(tableRow)
     	}
 
@@ -157,6 +154,7 @@ var update = function()
         // For the values in the current base, the factors (could be done elsewhere ), and the values in decimal
         // update the display
 
+        $(".centerednumber").css( 'width',widths[_base] + "%")
     	for ( tableNameIndex in table_names )
     	{
     	    table_id = "#" + table_names[tableNameIndex] + "_" + key
@@ -166,16 +164,17 @@ var update = function()
 	        {
 	        	y = x-1
 	        	v = _values[y]
-	        	if ( tableNameIndex == 1 ) v = "x " + _factor[x-1]
+	        	if ( tableNameIndex == 1 ) v = "x" + _factor[x-1]
 	        	if ( tableNameIndex == 2 ) v = _decimalValues[x-1]
 	    	    tableRow = "<td class='centerednumber'>" + v  + "</td>"
 	    	    $(table_id).append( tableRow )
 	    	    if ( '' != sumString ) sumString = sumString + ' + '
 	    	    sumString = sumString + _decimalValues[x-1]
 	    	}
-	    	$("#equation_" + key).html( sumString )
+	    	$("#equation_" + key).html( sumString + " =")
 	    	$("#base_10_" + key).html( timeComponents[index] )
 	    }
+        $(".centerednumber").css( 'width',widths[_base] + "%")
     }
 }
 
@@ -191,19 +190,10 @@ $(document).ready( function ()
     $(".circle_top").click( function()
     {
         nextBase = parseInt( this.textContent );
-        if ( ( nextBase == 0 ) || ( nextBase == 1 ) )
-        {
-            alert( "Mathematics doesn't work for base 0 or base 1.  Why is that?  Because  1x1 = 1 and 1x1x1 = 1 and so on." +
-            " There is no way to represent numbers larger than 1 in base 1.  Its that same with base 0, since 0x0 = 0.  By all means, try " +
-            "my favorite : base 2.  This is how computers work."
-            );
-        }
-        else
-            base = nextBase;
-            setBase( base )
-
+        if  ( nextBase > 1 ) setBase( nextBase )
     })
-    setBase(10)
+
+    setBase(Math.floor((Math.random() * 8) + 3  ) );
  	update();
 	timer = window.setInterval( update, 1000 );
 } );

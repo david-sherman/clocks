@@ -1,4 +1,4 @@
-body { margin: 3% 12% }
+body { margin: 3% 12%; background:white }
 
 .circle {
 	width: 40px;
@@ -13,6 +13,22 @@ body { margin: 3% 12% }
 	margin: auto;
 	margin-bottom:5px;
 }
+.circle_explain {
+	width: 40px;
+	height: 40px;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50%;
+	border : 2px black solid;
+	font-size:15px;
+	font-weight:bold;
+	line-height:30px;
+	text-align:center;
+	margin: auto;
+	margin-bottom:5px;
+	float:left;
+}
+
 .circle_top {
 	width: 75px;
 	height: 75px;
@@ -26,11 +42,13 @@ body { margin: 3% 12% }
 	margin: auto;
 	margin-bottom:5px;
 	float:left;
+	cursor:pointer;
 }
 
 
 .row {
-    border-top: 2px black solid
+    border-top: 1px black solid;
+    font-weight:bold;
 }
 
 .dynamictable {
@@ -41,18 +59,40 @@ body { margin: 3% 12% }
     text-align:center;
     padding-top:8%;
     padding-bottom:8%;
+    font-size:20px;
+    font-weight:bold;
+    width:50%;
     }
 
 .centeredtext {
     text-align:center;
-    font-size:25px;
-    font-weight:bold;
+    padding-top:8%;
     padding-bottom:8%;
+    font-size:20px;
+    font-weight:bold;
 
 }
 
+.highlight { color : green }
+
 h2 { text-align : center; }
 h4 { text-align : center; }
+
+#infoBase {
+    margin-top:2%;
+    background-color:white;
+    color:black;
+    font-weight:bold;
+    font-size:14pt;
+}
+#infoTime {
+    background-color:white;
+    color:black;
+    font-weight:bold;
+    font-size:14pt;
+    float:right;
+}
+
 
 #nav-header  {
 	text-align:center;
