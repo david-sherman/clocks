@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Clocks</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/clocks.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <div class="container-fluid">
+    <div class="panel panel-default">
+        <div class="panel-body" style="border: 3px solid black">
+            <span id="infoBase">Current time is blah</span>
+            (Click a numbered circle to change the base.)
+            <span id="infoTime">Current time is blah</span>
+            <h1 style="text-align:center">Clocks, symbols and number systems</h1>
+            <br/>
+            <a class="btn btn-primary btn-lg" href="#" role="button" data-toggle="modal" data-target="#explain">Explain This</a>
+            <a style='float:right' class="btn btn-primary btn-lg" href="#" role="button">All the time</a>
+        </div>
+
+    </div>
+    <div class="row">
+        <br/>
+        <div style='cursor:auto' class='circle_top c0'>0</div>
+        <div style='cursor:auto' class='circle_top c1'>1</div>
+        <div class='circle_top c2'>2</div>
+        <div class='circle_top c3'>3</div>
+        <div class='circle_top c4'>4</div>
+        <div class='circle_top c5'>5</div>
+        <div class='circle_top c6'>6</div>
+        <div class='circle_top c7'>7</div>
+        <div class='circle_top c8'>8</div>
+        <div class='circle_top c9'>9</div>
+        <div class='circle_top c10'>10</div>
+    </div>
+    <div class="row" style="border:none">
+        <br/>
+    </div>
+
+            <div class="row" id="labels">
+                <div class="col-sm-4">
+                     <table class="dynamictable">
+                         <td class="centeredtext">HOUR</td>
+                     </table>
+                </div>
+                <div class="col-sm-4">
+                     <table class="dynamictable">
+                         <td class="centeredtext">MINUTE</td>
+                     </table>
+                </div>
+                <div class="col-sm-4">
+                     <table class="dynamictable">
+                         <td class="centeredtext">SECOND</td>
+                     </table>
+                </div>
+            </div>
+            <div class="row" id="circles">
+                <div class="col-sm-4">
+                     <table id="circles_h" class="dynamictable">
+                         <td class="centerednumber">
+                               <div id='h_1' class='circle c1'>&nbsp;</div>
+                         </td>
+                         <td class="centerednumber">
+                               <div id='h_0' class='circle c4'>&nbsp;</div>
+                         </td>
+                     </table>
+                 </div>
+                <div class="col-sm-4">
+                     <table id="circles_m" class="dynamictable">
+                         <td class="centerednumber">
+                               <div id='m_1' class='circle c1'>&nbsp;</div>
+                         </td>
+                         <td class="centerednumber">
+                               <div id='m_0' class='circle c4'>&nbsp;</div>
+                         </td>
+                     </table>
+                </div>
+                <div class="col-sm-4">
+                     <table id="circles_s" class="dynamictable">
+                         <td class="centerednumber">
+                               <div id='s_1' class='circle c1'>&nbsp;</div>
+                         </td>
+                         <td class="centerednumber">
+                               <div id='s_0' class='circle c4'>&nbsp;</div>
+                         </td>
+                     </table>
+                    </div>
+            </div>
+            <div class="row" id="numbers">
+                <div class="col-sm-4">
+                     <table id='values_h' class="dynamictable"><td id="value_h_1" class="centerednumber">0</td><td id="value_h_0" class="centerednumber">3</td></table>
+                </div>
+                <div class="col-sm-4">
+                     <table id='values_m' class="dynamictable"><td id="value_m_1" class="centerednumber">0</td><td id="value_m_0"  class="centerednumber">3</td></table>
+                </div>
+                <div class="col-sm-4">
+                     <table id='values_s' class="dynamictable"><td id="value_s_1" class="centerednumber">0</td><td id="value_s_0"  class="centerednumber">3</td></table>
+                </div>
+            </div>
+            <div class="row" id="factors" style="border-top: 0px">
+                <div class="col-sm-4">
+                     <table id='factors_h' class="dynamictable"><td class="centerednumber">x10</td><td class="centerednumber">x1</td></table>
+                </div>
+                <div class="col-sm-4">
+                     <table id='factors_m' class="dynamictable"><td class="centerednumber">x10</td><td class="centerednumber">x1</td></table>
+                </div>
+                <div class="col-sm-4">
+                     <table id='factors_s' class="dynamictable"><td class="centerednumber">x10</td><td class="centerednumber">x1</td></table>
+                </div>
+            </div>
+            <div class="row" style="border-top: 2px black solid;" id="products">
+                <div class="col-sm-4">
+                     <table id='products_h' class="dynamictable"><td id="decimal_h_1" class="centerednumber">0</td><td id="decimal_h_0" class="centerednumber">3</td></table>
+                </div>
+                <div class="col-sm-4">
+                     <table id='products_m' class="dynamictable"><td id="decimal_m_1" class="centerednumber">0</td><td id="decimal_m_0" class="centerednumber">3</td></table>
+                </div>
+                <div class="col-sm-4">
+                     <table id='products_s' class="dynamictable"><td id="decimal_s_1" class="centerednumber">0</td><td id="decimal_s_0" class="centerednumber">3</td></table>
+                </div>
+            </div>
+            <div class="row" id="equations">
+                <div class="col-sm-4">
+                    <h4 id="equation_h">25 + 15 + 0 = 8</h4>
+                </div>
+                <div class="col-sm-4">
+                    <h4 id="equation_m">25 + 15 + 0 = 23</h4>
+                </div>
+                <div class="col-sm-4">
+                    <h4 id="equation_s">25 + 15 + 0 = 14</h4>
+                </div>
+            </div>
+            <div class="row" id="decimaltime">
+                <div class="col-sm-4">
+                    <h2  id="base_10_h">08</h2>
+                </div>
+                <div class="col-sm-4">
+                    <h2 id="base_10_m">23</h2>
+                </div>
+                <div class="col-sm-4">
+                    <h2 id="base_10_s">14</h2>
+                </div>
+            </div>
+    </div>
+<div id="explain" class="modal fade" role="dialog" >
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Clocks, symbols and number systems</h4>
+      </div>
+      <div class="modal-body">
+          <h4>Symbols</h4>
+          <p>We use these symbols  in various combinations to represent numbers:</p>
+              <h2>0,1,2,3,4,5,6,7,8,9</h2>
+        <p>We understand how to read them and manipulate them without thinking about it too much. But not
+          every culture and language uses these symbols. Cyrillic, for instance, uses these characters:</p>
+        <h2>xxxx</h2>
+        <p>Let's use colored circles to represent these symbols.  Like this:</p>
+            <div class="row" style="padding:3%;border-top:0px;margin:auto">
+            <div style='cursor:auto' class='circle_explain c0'>0</div>
+            <div style='cursor:auto' class='circle_explain c1'>1</div>
+            <div class='circle_explain c2'>2</div>
+            <div class='circle_explain c3'>3</div>
+            <div class='circle_explain c4'>4</div>
+            <div class='circle_explain c5'>5</div>
+            <div class='circle_explain c6'>6</div>
+            <div class='circle_explain c7'>7</div>
+            <div class='circle_explain c8'>8</div>
+            <div class='circle_explain c9'>9</div>
+            <div class='circle_explain c10'>10</div>
+            </div>
+            <p> For example we can represent the number 347, this way:</p>
+            <div class="row" style="padding:3%;border-top:0px">
+                <div style='cursor:auto' class='circle_explain c3'></div>
+                <div style='cursor:auto' class='circle_explain c4'></div>
+                <div style='cursor:auto' class='circle_explain c7'></div>
+            </div>
+          <p>People with <a href="https://en.wikipedia.org/wiki/Grapheme%E2%80%93color_synesthesia">color synesthisia</a>
+            do something like this automatically.</p>
+          <h4>Number Systems</h4>
+          <p>Take a moment to count up the number of symbols on the following line:</p>
+          <h2>1 2 3 4 5 6 7 5 r s 3 4</h2>
+          <p>Never mind, I'll do that for you.  There are twenty seven symbols on that line. Using our standard base 10 numbering system, we write this as:</p>
+          <h4>27</h4>
+          <p>understanding that
+              this means 2x10 + 7. But look at this :</p>
+          <h5>27 = 10x2 + 1x7. Base 10 representation : 27</h5>
+          <h5>27 = 9x<span class="highlight">3</span> + 1x0. Base 9 : 30</h5>
+          <h5>27 = 8x3 + 1x3. Base 8 : 33</h5>
+          <h5>27 = 7x3 + 1x6. Base 7 : 36</h5>
+          <h5>27 = 6x4 + 1x3. Base 6 : 43</h5>
+          <h5>27 = 25x1 + 5x0  + 1x2. Base 5 : 102</h5>
+          <h5>27 = 16x1 + 4x2  + 1x3. Base 4 : 123</h5>
+          <h5>27 = 27x1 + 9x0 + 3x0 + 1x0. Base 3 : 1000</h5>
+          <h5>27 = 16x1 + 8x1 + 4x0 + 2x1 + 1x1. Base 2 : 11011</h5>
+          <p>There are lots of ways to represent the number of symbols on the line. </p>
+          <h4>Clocks</h4>
+          <p>Suppose the current time is 10.43.48. Using our circles and base 10, we represent that this way:</p>
+            <div class="row" style="padding:3%;border-top:0px">
+                <div class="col-sm-4">
+                     <table  class="dynamictable">
+                         <td class="centerednumber">
+                               <div id='h_1' class='circle_explain c1'>1</div>
+                         </td>
+                         <td class="centerednumber">
+                               <div id='h_0' class='circle_explain c0'>0</div>
+                         </td>
+                     </table>
+                 </div>
+                <div class="col-sm-4">
+                     <table class="dynamictable">
+                         <td class="centerednumber">
+                               <div id='m_1' class='circle_explain c4'>4</div>
+                         </td>
+                         <td class="centerednumber">
+                               <div id='m_0' class='circle_explain c3'>3</div>
+                         </td>
+                     </table>
+                </div>
+                <div class="col-sm-4">
+                     <table class="dynamictable">
+                         <td class="centerednumber">
+                               <div id='s_1' class='circle_explain c4'>4</div>
+                         </td>
+                         <td class="centerednumber">
+                               <div id='s_0' class='circle_explain c8'>8</div>
+                         </td>
+                     </table>
+                    </div>
+            </div>
+          <p>In base 5, the time is 20.133.143 because 10= 5x2 + 1x0, 43 = 25x1 + 5x3 + 1x3,
+              and 48 = 25x1 + 5x3 + 1x3. That looks like this: </p>
+            <div class="row" style="padding:3%;border-top:0px">
+                <div class="col-sm-4">
+                     <table  class="dynamictable">
+                         <td class="centerednumber">
+                               <div id='h_1' class='circle_explain c0'>0</div>
+                         </td>
+                         <td class="centerednumber">
+                               <div id='h_1' class='circle_explain c2'>2</div>
+                         </td>
+                         <td class="centerednumber">
+                               <div id='h_0' class='circle_explain c0'>0</div>
+                         </td>
+                     </table>
+                 </div>
+                <div class="col-sm-4">
+                     <table class="dynamictable">
+                         <td class="centerednumber">
+                               <div id='h_1' class='circle_explain c1'>1</div>
+                         </td>
+                         <td class="centerednumber">
+                               <div id='m_1' class='circle_explain c3'>3</div>
+                         </td>
+                         <td class="centerednumber">
+                               <div id='m_0' class='circle_explain c3'>3</div>
+                         </td>
+                     </table>
+                </div>
+                <div class="col-sm-4">
+                     <table class="dynamictable">
+                         <td class="centerednumber">
+                               <div id='h_1' class='circle_explain c1'>1</div>
+                         </td>
+                         <td class="centerednumber">
+                               <div id='s_1' class='circle_explain c4'>4</div>
+                         </td>
+                         <td class="centerednumber">
+                               <div id='s_0' class='circle_explain c3'>3</div>
+                         </td>
+                     </table>
+                    </div>
+            </div>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/clocks.js"></script>
+
+
+</body>
+
+</html>
