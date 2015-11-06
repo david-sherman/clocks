@@ -14,15 +14,15 @@ body { margin: 3% 12%; background:white }
 	margin-bottom:5px;
 }
 .circle_explain {
-	width: 40px;
-	height: 40px;
+	width: 75px;
+	height: 75px;
 	-moz-border-radius: 50px;
 	-webkit-border-radius: 50px;
 	border-radius: 50%;
 	border : 2px black solid;
-	font-size:15px;
+	font-size:25px;
 	font-weight:bold;
-	line-height:30px;
+	line-height:80px;
 	text-align:center;
 	margin: auto;
 	margin-bottom:5px;
@@ -102,7 +102,6 @@ h4 { text-align : center; }
 	padding:10px;
 
 }
-
 
 
 .c0  {

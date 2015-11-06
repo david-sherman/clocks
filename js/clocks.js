@@ -196,4 +196,6 @@ $(document).ready( function ()
     setBase(Math.floor((Math.random() * 8) + 3  ) );
  	update();
 	timer = window.setInterval( update, 1000 );
+
+
 } );
