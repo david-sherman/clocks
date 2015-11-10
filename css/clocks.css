@@ -1,3 +1,9 @@
+/*
+0C2653
+87F73D
+40CCFC
+*/
+
 body { margin: 3% 12%; background:white }
 
 .circle {
@@ -74,20 +80,27 @@ body { margin: 3% 12%; background:white }
 }
 
 .highlight { color : green }
+.purple { color : #0C2653}
 
-h2 { text-align : center; }
-h4 { text-align : center; }
+.clockButton {
+    background:#40CCFC;
+    color:#0C2653
+}
+
+h1 { color:#40CCFC}
+h2 { text-align : center}
+h4 { text-align : center }
 
 #infoBase {
     margin-top:2%;
-    background-color:white;
-    color:black;
+    background-color:#0C2653;
+    color:white;
     font-weight:bold;
     font-size:14pt;
 }
 #infoTime {
-    background-color:white;
-    color:black;
+    background-color:#0C2653;
+    color:white;
     font-weight:bold;
     font-size:14pt;
     float:right;

@@ -1,3 +1,4 @@
+/* CLOCKS */
 
 var timer;
 var _base = 10;
@@ -142,7 +143,7 @@ var update = function()
     {
         key = keys[index]
 
-        // Calculate the comonents of time in the current base
+        // Calculate the components of time in the current base
 
 	    _calcValues( timeComponents[index], _values)
 	    answer = 0
