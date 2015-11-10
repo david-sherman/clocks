@@ -30,9 +30,22 @@ var seconds = [0,0,0,0]
 
  */
 
+function getParameter(theParameter) {
+  var params = window.location.search.substr(1).split('&');
+
+  for (var i = 0; i < params.length; i++) {
+    var p=params[i].split('=');
+	if (p[0] == theParameter) {
+	  return decodeURIComponent(p[1]);
+	}
+  }
+  return false;
+}
+
 function setBase(base)
 {
     _base = base;
+    $("#clockbutton").attr( "href", "./theclock.html?base=" + _base );
 	for ( index =  0; index < maxFactor; index++ )
 	{
 		_factor[index] = Math.pow( _base, index )
@@ -182,10 +195,6 @@ var update = function()
 
 $(document).ready( function ()
 {
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
 
     $(".circle_top").click( function()
     {
@@ -193,7 +202,12 @@ $(document).ready( function ()
         if  ( nextBase > 1 ) setBase( nextBase )
     })
 
-    setBase(Math.floor((Math.random() * 8) + 3  ) );
+    base = getParameter("base")
+    console.log("Base is " + base )
+    if ( ! base )
+        base = Math.floor((Math.random() * 8) + 3   );
+
+    setBase(base )
  	update();
 	timer = window.setInterval( update, 1000 );
 

@@ -14,15 +14,15 @@ body { margin: 3% 12%; background:white }
 	margin-bottom:5px;
 }
 .circle_explain {
-	width: 75px;
-	height: 75px;
+	width: 65px;
+	height: 65px;
 	-moz-border-radius: 50px;
 	-webkit-border-radius: 50px;
 	border-radius: 50%;
 	border : 2px black solid;
 	font-size:25px;
 	font-weight:bold;
-	line-height:80px;
+	line-height:55px;
 	text-align:center;
 	margin: auto;
 	margin-bottom:5px;
@@ -30,14 +30,14 @@ body { margin: 3% 12%; background:white }
 }
 
 .circle_top {
-	width: 75px;
-	height: 75px;
+	width: 65px;
+	height: 65px;
 	-moz-border-radius: 50px;
 	-webkit-border-radius: 50px;
 	border-radius: 50%;
 	border : 2px black solid;
 	font-size:25px;
-	line-height:80px;
+	line-height:55px;
 	text-align:center;
 	margin: auto;
 	margin-bottom:5px;

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Clocks</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/clocks.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <div class="container-fluid">
+            <p><span id="infoBase">xxx</span><span id="infoTime">xxx</span></p>
+            <div class="row" id="circles">
+                <div class="col-sm-4">
+                     <table id="circles_h" class="dynamictable">
+                         <td class="centerednumber">
+                               <div id='h_1' class='circle c1'>&nbsp;</div>
+                         </td>
+                         <td class="centerednumber">
+                               <div id='h_0' class='circle c4'>&nbsp;</div>
+                         </td>
+                     </table>
+                 </div>
+                <div class="col-sm-4">
+                     <table id="circles_m" class="dynamictable">
+                         <td class="centerednumber">
+                               <div id='m_1' class='circle c1'>&nbsp;</div>
+                         </td>
+                         <td class="centerednumber">
+                               <div id='m_0' class='circle c4'>&nbsp;</div>
+                         </td>
+                     </table>
+                </div>
+                <div class="col-sm-4">
+                     <table id="circles_s" class="dynamictable">
+                         <td class="centerednumber">
+                               <div id='s_1' class='circle c1'>&nbsp;</div>
+                         </td>
+                         <td class="centerednumber">
+                               <div id='s_0' class='circle c4'>&nbsp;</div>
+                         </td>
+                     </table>
+                    </div>
+            </div>
+    </div>
+    <!-- /#wrapper -->
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/clocks.js"></script>
+
+
+</body>
+
+</html>
