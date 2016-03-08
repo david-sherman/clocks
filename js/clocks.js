@@ -128,10 +128,14 @@ function showValues( key, values, factor )
 var update = function()
 {
 	now = new Date()
+	ampm = ' am'
+	if ( now.getHours() > 11 ) ampm = ' pm'
     timeComponents =  [ now.getHours(), now.getMinutes(), now.getSeconds() ]
 	timeComponents[0] = ( timeComponents[0] > 12 ) ? "0" + (timeComponents[0]-12 ) : timeComponents[0];
+	timeComponents[1] = ( timeComponents[1] < 10 ) ? "0" + (timeComponents[1] ) : timeComponents[1];
+	timeComponents[2] = ( timeComponents[2] < 10 ) ? "0" + (timeComponents[2] ) : timeComponents[2];
 	$('#infoBase').html("Current base is " + _base + ".");
-    $('#infoTime').html("Current time is " + timeComponents[0] + ":" + timeComponents[1] + ":" + timeComponents[2] );
+    $('#infoTime').html("Current time is " + timeComponents[0] + ":" + timeComponents[1] + ":" + timeComponents[2] + ampm);
     keys = ['h','m', 's']
     table_names = ["values", "factors", "products"]
     tops = [0,0,6,4,3,3,3,3,2,2,2]
